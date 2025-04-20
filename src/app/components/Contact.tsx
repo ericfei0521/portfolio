@@ -1,7 +1,40 @@
+'use client';
+import { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { FiPhone, FiLink, FiMail } from 'react-icons/fi';
+import { FiMail, FiPhone, FiLink } from 'react-icons/fi';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [status, setStatus] = useState('');
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { id, value } = e.target;
+        setFormData((prev) => ({ ...prev, [id]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setStatus('');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus('Message sent successfully!');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                const errorData = await response.json();
+                setStatus(errorData.error || 'Failed to send message.');
+            }
+        } catch {
+            setStatus('An error occurred. Please try again later.');
+        }
+    };
+
     return (
         <section id="contact" className="py-20 relative">
             <div className="blob bg-mint/20 top-20 left-40"></div>
@@ -61,7 +94,7 @@ const Contact = () => {
                     </div>
 
                     <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg">
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="block mb-2 text-white/80">
                                     Name
@@ -69,6 +102,8 @@ const Contact = () => {
                                 <input
                                     type="text"
                                     id="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
                                     className="w-full bg-white/10 border border-white/20 rounded-lg p-3 text-white focus:outline-none focus:border-mint transition-colors"
                                     placeholder="Your name"
                                 />
@@ -81,6 +116,8 @@ const Contact = () => {
                                 <input
                                     type="email"
                                     id="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     className="w-full bg-white/10 border border-white/20 rounded-lg p-3 text-white focus:outline-none focus:border-mint transition-colors"
                                     placeholder="your.email@example.com"
                                 />
@@ -93,17 +130,21 @@ const Contact = () => {
                                 <textarea
                                     id="message"
                                     rows={5}
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     className="w-full bg-white/10 border border-white/20 rounded-lg p-3 text-white focus:outline-none focus:border-mint transition-colors"
                                     placeholder="Your message here..."
                                 ></textarea>
                             </div>
 
                             <button
-                                type="button"
+                                type="submit"
                                 className="w-full bg-mint hover:bg-white text-dark font-semibold py-3 px-6 rounded-lg transition-colors"
                             >
                                 Send Message
                             </button>
+
+                            {status && <p className="text-white mt-4">{status}</p>}
                         </form>
                     </div>
                 </div>
