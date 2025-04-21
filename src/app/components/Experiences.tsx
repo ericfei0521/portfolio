@@ -6,47 +6,68 @@ const experiences = [
         company: 'AlleyPin',
         period: '2024.08 - Present',
         achievements: [
-            'Modernized LINE LIFF pages to enhance user experience and engagement.',
-            'Integrated legacy services into a Next.js app with best practices for server components, templates, Sentry logging, and shared utilities.',
-            'Developed a shared design system, reducing redundancy and improving maintainability.',
-            'JavaScript-to-TypeScript migration, enhancing scalability and reducing bugs.',
-            'Led the internationalization efforts for three major frontend processes, integrating i18n services and CI/CD automation to minimize manual maintenance of translation keys.',
-            'Spearheaded frontend architecture for two new services, defined POCs, and led API discussions, completing both projects within two weeks.',
-            'Diagnosed and resolved Express.js API issues, accelerating development efficiency.',
+            'Modernized LINE LIFF interfaces, delivering a smoother, more intuitive user experience that boosted engagement.',
+            'Migrated legacy services to a modern Next.js architecture, incorporating App Router, server components, and Sentry logging, reducing page load times by almost 30% and boosting developer productivity like 1 times faster  through reusable utilities and scalable design.',
+            'Established a design system from scratch, reducing UI/UX inconsistencies and improving cross-team efficiency.',
+            'Led JavaScript to TypeScript migration, enhancing type safety, reducing runtime bugs, and simplifying code maintenance.',
+            'Implemented i18n across 3 core services via a CI/CD-integrated workflow, cutting manual translation work and accelerating global readiness.',
+            'Architected  high-priority services, handling POC planning, API contract alignment, and full implementation.',
+            'Optimized Express.js APIs, resolving bottlenecks and enabling faster frontend-backend delivery.',
+            'Developed Chrome extensions for direct interaction with products like LINE OA boosting user retention by 15% and enhancing product accessibility.',
         ],
     },
     {
-        title: 'L2. Frontend Developer',
+        title: 'Mid. Frontend Developer',
         company: 'Partipost',
-        period: '2022 - 2024',
+        period: '2022.03 - 2024.08',
         achievements: [
-            'Refactored key features, reducing unnecessary re-renders by 10x and improving load times by 30%.',
-            'Designed and implemented a RBAC system and a comment system, reducing manual operations by 50%.',
-            'Developed a comprehensive, scalable design system using advanced component design patterns, integrated with Storybook to enhance team collaboration and accelerate development speed.',
-            'Led end-to-end testing adoption with Playwright and GitLab CI, enhancing system reliability and deployment confidence.',
-            'Integrated Fortitude CLI for i18n and Amplitude for analytics, improving user data insights.',
-            'Conducted multiple POCs, influencing key product and architectural decisions.',
+            'Refactored key features in React, reducing unnecessary re-renders by 10x and improving load times by 30%, delivering a seamless and efficient user experience.',
+            'Built a scalable RBAC system and advanced comment module, cutting ops workload by 50%.',
+            'Led and Created a modular design system with advanced patterns and Storybook, accelerating feature delivery and ensuring design consistency.',
+            'Championed end-to-end testing with Playwright and GitLab CI, increasing release reliability by 40% and enhancing developer confidence in production deployments.',
+            'Automated i18n processes using Fortitude CLI and integrated Amplitude analytics for data-driven product improvements.',
+            'Delivered multiple POCs, including a new onboarding flow and redesigned dashboard, directly shaping product architecture and strategic direction.',
         ],
     },
     {
         title: 'Jr. Frontend Developer',
         company: 'Kuobrothers Corp',
-        period: '2021 - 2022',
+        period: '2021.05 - 2022.03',
         achievements: [
-            'Rebuilt an e-commerce platform with Next.js, improving performance and responsiveness.',
-            'Developed a D3-powered real-time sales dashboard, enhancing business visibility for TV sales events.',
-            'Implemented AMP pages, boosting SEO rankings and page speed scores.',
-            'Introduced Cypress for E2E testing, ensuring core feature reliability.',
-            'Optimized performance with code-splitting, React improvements, and progressive images.',
+            'Re-architected a monolithic e-commerce platform into a high-performance Next.js application, improving page load speeds by 60% which enhance the lighthouse performance score to almost reach 100 and enabling seamless scalability for future growth.',
+            'Built a real-time D3-powered sales dashboard for live TV commerce, enabling instant sales insights and better business decisions.',
+            'Developed an AMP page that boosted the main product website SEO score.',
+            'Implemented Cypress E2E testing, strengthening test coverage and reducing release regressions.',
+            'Optimized web app performance ( code-splitting, react optimization skills, progressive images ... etc) which help the web app reach 100 performance scores and 92 SEO scores, and more than 91% great user experience links.',
         ],
     },
     {
         title: 'Jr. Frontend Developer',
         company: 'Glaibo Digital',
-        period: '2021/03 - 2022/05',
+        period: '2021.03 - 2022.05',
         achievements: [
-            'Developed new features using TypeScript, Next.js, and Apollo GQL to support dynamic content needs.',
-            'Created reusable service methods to maximize efficiency and maintainability across projects.',
+            'Built dynamic features using Next.js, TypeScript, and Apollo GraphQL, ensuring fast and efficient client-side rendering.',
+            'Developed reusable service-layer utilities, promoting code reuse and easing long-term maintenance across projects.',
+        ],
+    },
+    {
+        title: 'Frontend Developer Trainee',
+        company: 'AppWorks school',
+        period: '2020.09 - 2021.01',
+        achievements: [
+            'Developed a Project management system real-time chat application using React and Firebase, enhancing user engagement and interaction.',
+            'Created a responsive e-commerce website with HTML, CSS, and JavaScript.',
+        ],
+    },
+    {
+        title: 'Project Manager',
+        company: 'MoonShine Animation Studio',
+        period: '2019.02 - 2020.09',
+        achievements: [
+            'Movie, commercial, and other digital media project management.',
+            'Managed and scheduled work process for 60 - 120 members by cases.',
+            'Successfully engaged in negotiations and delivered projects, resulting in a significant increase of 20 million in annual revenue for the company.',
+            'Maintained relationships with major corporate clients, such as Asus, Acer, and other renowned brands.',
         ],
     },
 ];
@@ -57,7 +78,7 @@ const Experience = () => {
             <div className="blob bg-mint/20 top-40 left-20"></div>
 
             <div className="container mx-auto px-6">
-                <h2 className="section-title">Experience</h2>
+                <h2 className="section-title">Experiences</h2>
 
                 <div className="mt-12">
                     {experiences.map((exp, index) => (
